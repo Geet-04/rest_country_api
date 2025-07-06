@@ -7,7 +7,7 @@ const Countrieslist = ({searchTerm, region}) => {
   const [countriesData, setCountriesData] = useState([]);
 
   useEffect(()=>{
-    fetch('https://restcountries.com/v3.1/all')
+    fetch('https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital,cca3')
    .then((res)=> res.json())    // res.json() returns a Promise of the JSON (which is an array of countries)
    .then((data)=>{
       setCountriesData(data)
